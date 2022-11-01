@@ -1,4 +1,4 @@
-# **What Does it Mean to be Happy? Project Proposal**
+# **What Does it Mean to be Happy? Project Proposal :smiley:**
 
 ## Project Title:
 
@@ -63,6 +63,7 @@ The possible benefits of this project is to serve as a general guide on what fac
 The World Happiness Report is a landmark survey of the state of global happiness. This data was collected in 2019 for the purpose of researching global happiness and 6 factors contributing to happiness. The variables in this data don’t affect the the total score reported for each country, but they do explain why some countries rank higher than others. For this project we are measuring happiness and picked four variables out of  six, which include health, country, economy and freedom and how they relate to happiness. According to the website we are retrieving data from; the happiness scores and rankings use data from the Gallup World Poll. The scores are based on answers to the main life evaluation question asked in the poll. This question, known as the Cantril ladder, asks respondents to think of a ladder with the best possible life for them being a 10 and the worst possible life being a 0 and to rate their own current lives on that scale. The scores are from representative samples. Using the data from the figure below we will be able to make conclusions about the relationship between variables and how these variables affect the overall score of happiness. Furthermore, with the 4 factors we selected: health, country, economy, and freedom, we are able to measure how they correlate with the level of happiness using a scatter plot, to observe and visually display the relationship between variables. With the data we are provided we are also  given a benchmark with our variables as to how low they can perform. Dystopia as an imaginary country that has the world’s least-happy people. The purpose in establishing Dystopia is to have a benchmark against countries that can be favorably compared to a country that cannot be performed lower than, in terms of each of the six key variables. Lastly the data we selected has several benefits that include  allowing  governments, organizations, and healthcare metrics and evaluators to inform their policy-making decisions around factors that can contribute to happiness. Data evaluations can be used as an important resource as a measurement of well-being that can be used to effectively assess the progress of nations.
 
 ![](data.png)
+
 Figure 2: Data Description
 
 Dataset: [link to dataset](https://www.kaggle.com/datasets/unsdsn/world-happiness?resource=download&select=2019.csv)
