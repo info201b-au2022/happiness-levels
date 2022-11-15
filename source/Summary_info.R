@@ -17,7 +17,7 @@ happiness_merged <- happiness %>%
   left_join(median_age, by ='Country') %>% 
   left_join(suicide_rate, by ='Country') %>% 
   left_join(urbanization,by ='Country') 
-
+ 
 
 info_happiness <- list()
 info_happiness$rows <- nrow(happiness)
