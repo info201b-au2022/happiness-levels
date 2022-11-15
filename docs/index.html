@@ -363,42 +363,51 @@ display: none;
 into different components that could influence what makes people happy.
 In our chart #1, we can see that based on region, North America and
 Western Europe are the places with the highest mean happiness score with
-a score above ’r all_sums<span class="math inline">\(&#39; pictured in a
-lighter green. A perfect example is chart #2 which visualizes the effect
-of GDP, arguing the idea of money buying happiness. The hypothesis
-proved to be correct to a certain extent. With the following
-values.  -GDP_happiness_info&lt;- list()  -GDP &lt;-
-happiness\)</span><code>GDP per capita</code> -GDP_happiness_info<span class="math inline">\(GDP_median &lt;- median(GDP,na.rm =
-T)  -GDP_happiness_info\)</span>GDP_max &lt;- max(GDP,na.rm = T)
--GDP_happiness_info$GDP_min &lt;- min(GDP,na.rm = T)</p>
+a score above 7.769 pictured in a lighter green. A perfect example is
+chart #2 which visualizes the effect of GDP on happiness, arguing the
+idea of money buying happiness. The hypothesis proved to be correct as
+seen with the upward sloping trendline. Key values for GDP were:</p>
+<ul>
+<li>Maximum 1.684</li>
+<li>Minimum 0<br />
+</li>
+<li>Median 0.96</li>
+</ul>
 <p>The data on the plot shows that there isn’t a single country with a
 GPA under 1.00 that ranks above 30th. On the other hand, many outliers
 disregard the importance of a country’s wealth as a determinant of their
 happiness. For example, Kuwait has a GDP of 1.474 and is ranked 45th
-compared to Brazil which has a GDP of 0.986 and is ranked 28th. Lastly,
-under the assumption that money is the main determinant of happiness.
-United Arab Emirates has the highest GDP in the data but is only ranked
-20th. Lastly, our 3rd Chart shows us the top ten happiest countries and
-their score. Finland is at #1 with a score of 7.632 and so on Australia
-is at #10 with 7.272. To understand the data and variables such as year,
-social support, health/ life expectancy, and generosity we grouped them
-by the percentage of the two years of the data. For example, we have in
-our data the mean of 0.789 a maximum of 1.141 &amp; a minimum of 0 for
-life expectancy/health. To compare them to where they ranked on the
-happiness index and evaluate their importance. Identifying the trends
-that prove to have the strongest correlation to the changes in the
+compared to Brazil which has a GDP of 0.986 and is ranked 28th. Another
+notable datapoint is the United Arab Emirates, who have the highest GDP
+in the data but is only ranked 20th.</p>
+<p>Lastly, our 3rd chart shows us the top ten happiest countries and
+their score. Finland is at #1 with a score of 7.632 and Australia is at
+#10 with 7.272. To understand the data and variables such as year,
+social support, healthy life expectancy, and generosity, we grouped them
+by the year. For example, we have in our data the median of 0.789, a
+maximum of 1.141, and a minimum of 0.105 for healthy life expectancy
+score. Further on, we will compare them to where they ranked on the
+happiness index, evaluate their importance, and identify the trends that
+prove to have the strongest correlation to the changes in the
 rankings.</p>
 </div>
 <div id="aggregate-table" class="section level2">
 <h2>Aggregate Table</h2>
 <table>
+<colgroup>
+<col width="6%" />
+<col width="12%" />
+<col width="24%" />
+<col width="36%" />
+<col width="19%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="right">Year</th>
-<th align="right">Score</th>
-<th align="right">Social Support</th>
-<th align="right">Healthy Life Expectancy</th>
-<th align="right">Generosity</th>
+<th align="right">Avg Score</th>
+<th align="right">Avg Social Support</th>
+<th align="right">Avg Healthy Life Expectancy</th>
+<th align="right">Avg Generosity</th>
 </tr>
 </thead>
 <tbody>

@@ -22,6 +22,7 @@ happiness_merged <- happiness %>%
 info_happiness <- list()
 info_happiness$rows <- nrow(happiness)
 info_happiness$col <-ncol(happiness)
+info_happiness$max <- max(happiness$Score, na.rm = TRUE)
 
 
 GDP_happiness_info<- list()
@@ -73,5 +74,5 @@ urban_info$max <- max(urban,na.rm = TRUE)
 urban_info$min <- min(urban,na.rm = TRUE)
 
 get_relevant_summaries <- function() {
-  return(list(info_happiness, GDP_happiness_info, Freedom_happiness_info, Health_happiness_info))
+  return(list(happiness=info_happiness, gdp=GDP_happiness_info, free=Freedom_happiness_info, health=Health_happiness_info))
 }

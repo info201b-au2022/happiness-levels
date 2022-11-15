@@ -11,21 +11,21 @@ library(knitr)
 ```
 
 ## Dynamic Paragraph
-```{r summary, echo=FALSE, message=FALSE, include=FALSE}
+```{r summary, echo=FALSE, message=FALSE, warning=FALSE}
 source("../source/Summary_info.R")
 all_sums <- get_relevant_summaries()
 ```
 
-To summarize the information gathered from the data, we spread it out into different components that could influence what makes people happy. In our chart #1, we can see that based on region, North America and Western Europe are the places with the highest mean happiness score with a score above 'r all_sums$GDP_happiness_info$max' pictured in a lighter green. A perfect example is chart #2 which visualizes the effect of GDP, arguing the idea of money buying happiness. The hypothesis proved to be correct to a certain extent. With the following values. 
- -GDP_happiness_info<- list()
-	-GDP <- happiness$`GDP per capita`
-	-GDP_happiness_info$GDP_median <- median(GDP,na.rm = T)
-	-GDP_happiness_info$GDP_max <- max(GDP,na.rm = T)
-	-GDP_happiness_info$GDP_min <- min(GDP,na.rm = T) 
-
-The data on the plot shows that there isn't a single country with a GPA under 1.00 that ranks above 30th. On the other hand, many outliers disregard the importance of a country's wealth as a determinant of their happiness. For example, Kuwait has a GDP of 1.474 and is ranked 45th compared to Brazil which has a GDP of 0.986 and is ranked 28th. Lastly, under the assumption that money is the main determinant of happiness. United Arab Emirates has the highest GDP in the data but is only ranked 20th. Lastly, our 3rd Chart shows us the top ten happiest countries and their score. Finland is at #1 with a score of 7.632 and so on Australia is at #10 with 7.272. To understand the data and variables such as year, social support, health/ life expectancy, and generosity we grouped them by the percentage of the two years of the data. For example, we have in our data the mean of 0.789 a maximum of 1.141 & a minimum of 0 for life expectancy/health. To compare them to where they ranked on the happiness index and evaluate their importance. Identifying the trends that prove to have the strongest correlation to the changes in the rankings.
+To summarize the information gathered from the data, we spread it out into different components that could influence what makes people happy. In our chart #1, we can see that based on region, North America and Western Europe are the places with the highest mean happiness score with a score above `r all_sums$happiness$max` pictured in a lighter green. A perfect example is chart #2 which visualizes the effect of GDP on happiness, arguing the idea of money buying happiness. The hypothesis proved to be correct as seen with the upward sloping trendline. Key values for GDP were: 
 
 
+* Maximum `r all_sums$gdp$max` 
+* Minimum `r all_sums$gdp$min`  
+* Median `r all_sums$gdp$median`
+
+The data on the plot shows that there isn't a single country with a GPA under 1.00 that ranks above 30th. On the other hand, many outliers disregard the importance of a country's wealth as a determinant of their happiness. For example, Kuwait has a GDP of 1.474 and is ranked 45th compared to Brazil which has a GDP of 0.986 and is ranked 28th. Another notable datapoint is the United Arab Emirates, who have the highest GDP in the data but is only ranked 20th. 
+
+Lastly, our 3rd chart shows us the top ten happiest countries and their score. Finland is at #1 with a score of 7.632 and Australia is at #10 with 7.272. To understand the data and variables such as year, social support, healthy life expectancy, and generosity, we grouped them by the year. For example, we have in our data the median of `r all_sums$health$median`, a maximum of `r all_sums$health$max`, and a minimum of 0.105 for healthy life expectancy score. Further on, we will  compare them to where they ranked on the happiness index, evaluate their importance, and identify the trends that prove to have the strongest correlation to the changes in the rankings.
 
 
 ## Aggregate Table
@@ -66,6 +66,3 @@ happiness_top_ten()
 Chart 3 shows the happiest places in the world. 
 The Scandinavian countries appear to be the happiest.
 This chart was included to highlight the countries with the highest happiness ratings.
-
-
-
