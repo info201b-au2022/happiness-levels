@@ -16,7 +16,7 @@ source("../source/Summary_info.R")
 all_sums <- get_relevant_summaries()
 ```
 
-To summarize the information gathered from the data, we spread it out into different components that could influence what makes people happy. In our chart #1, we can see that based on region, North America and Western Europe are the places with the highest mean happiness score with a score above 'r all_sums$' pictured in a lighter green. A perfect example is chart #2 which visualizes the effect of GDP, arguing the idea of money buying happiness. The hypothesis proved to be correct to a certain extent. With the following values. 
+To summarize the information gathered from the data, we spread it out into different components that could influence what makes people happy. In our chart #1, we can see that based on region, North America and Western Europe are the places with the highest mean happiness score with a score above 'r all_sums$GDP_happiness_info$max' pictured in a lighter green. A perfect example is chart #2 which visualizes the effect of GDP, arguing the idea of money buying happiness. The hypothesis proved to be correct to a certain extent. With the following values. 
  -GDP_happiness_info<- list()
 	-GDP <- happiness$`GDP per capita`
 	-GDP_happiness_info$GDP_median <- median(GDP,na.rm = T)
@@ -33,6 +33,9 @@ The data on the plot shows that there isn't a single country with a GPA under 1.
 source("../source/aggregate_operations.R")
 kable(display_grouped_averages())
 ```
+
+This table depicts the means of happiness score, social support, life expectancy, and generosity ratings, grouped by each year. This table reveals interesting information because while happiness mean does not show a trend increase from 2018 to 2019, life expectancy noticeably increased. It’s important to remember that causation does not mean correlation—life expectancy could have increased for reasons other than happiness. Because of this, I think it is fair to say that in general, world happiness and the related metrics did not increase substantially from 2018 to 2019.
+
 
 ## Charts
 ```{r chart1, echo=FALSE, message=FALSE, warning=FALSE}
@@ -66,57 +69,3 @@ This chart was included to highlight the countries with the highest happiness ra
 
 
 
-
-
-
-
-
-
-
-
-
-
-## What is this file for?
-
-
-* This file will eventually become your project report for **P02: Exploratory Data Analysis**. Specifically, you will write rmarkdown to report your exploratory data analysis.
-
-* Please see Canvas for more details.
-
-## ACCESSING THE /source DIRECTORY
-### Example 1: Source some code and run a function
-```{r}
-# Example 1: Note relative path, which can be read: Up one
-# directory(..), down into source (/source), and 
-# then "source" an R file (data_access.R)
-source("../source/data_access.R")
-data_access_test()
-```
-
-### Example 2: Initialize a variable and then use it
-```{r}
-# Example 1: This function was "sourced" above
-msg <- data_access_test(" Morgan!")
-```
-
-> `r msg` Hope you have a good day!! 
-
-## ABOUT THIS FILE: 
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
