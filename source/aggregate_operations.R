@@ -19,5 +19,6 @@ grouped_averages <- happiness %>%
   ) %>%
   mutate_if(is.numeric, round, digits=3)
 
-View(grouped_averages)
-
+display_grouped_averages <- function() {
+  return(grouped_averages)
+}

@@ -4,7 +4,7 @@ library(dplyr)
 library(tidyr)
 happiness = read.csv("https://raw.githubusercontent.com/info201b-au2022/happiness-levels/main/data/2019_happiness.csv")
 
-ggplot(data = happiness) +
+scatterplot <- ggplot(data = happiness) +
   geom_point(mapping = aes(x = GDP.per.capita, y = Score)) +
   geom_smooth(mapping = aes(x = GDP.per.capita, y = Score)) +
   labs(
@@ -12,3 +12,7 @@ ggplot(data = happiness) +
     y = "Happiness Score",
     title = "Happiness vs GDP per capita"
   )
+
+gdp_happiness_scatplot <- function() {
+  return(scatterplot)
+}

@@ -11,7 +11,7 @@ data2 <- top_ten                                                 # Replicate ori
 data2$Country.or.region <- factor(data2$Country.or.region,                                    # Factor levels in increasing order
                   levels = data2$Country.or.region[order(data2$Score)])
 
-ggplot(data = data2) +
+topten <- ggplot(data = data2) +
   geom_col(mapping = aes(x = Country.or.region, y = Score)) +
   coord_flip() +
   labs(
@@ -19,3 +19,7 @@ ggplot(data = data2) +
     x = "Country",
     y = "Happiness Score"
   )
+
+happiness_top_ten <- function() {
+  return(topten)
+}

@@ -3,7 +3,7 @@ library(ggplot2)
 library(dplyr)
 library(tidyr)
 
-install.packages("maps")
+#install.packages("maps")
 library(maps)
 world_shape = map_data("world")
 happiness = read.csv("https://raw.githubusercontent.com/info201b-au2022/happiness-levels/main/data/2019_happiness.csv")
@@ -17,7 +17,7 @@ world_happiness <- world_shape %>%
   rename(Country.or.region = region) %>% 
   left_join(happiness, by = "Country.or.region")
 
-ggplot(world_happiness) +
+plots <- ggplot(world_happiness) +
   geom_polygon(
     mapping = aes(x = long, y = lat, group = group, fill = Score),
     color = "white",
@@ -29,6 +29,11 @@ ggplot(world_happiness) +
        x = "Latitude",
        y = "Longitude",
        title = "Map of World Happiness"
-       )
+  )
+
+world_happiness_plot <- function() {
+  return(plots)
+}
+
 
   
