@@ -13,9 +13,10 @@ grouped_averages <- happiness %>%
   group_by(Year) %>%
   summarise_all(mean) %>%
   rename(
-    'Social Support' = Social.support,
-    'Healthy Life Expectancy' = Healthy.life.expectancy,
-    'Generosity' = Generosity
+    'Avg Score' = Score,
+    'Avg Social Support' = Social.support,
+    'Avg Healthy Life Expectancy' = Healthy.life.expectancy,
+    'Avg Generosity' = Generosity
   ) %>%
   mutate_if(is.numeric, round, digits=3)
 
