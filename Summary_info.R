@@ -1,16 +1,17 @@
-
+library(ggplot2)
 library(dplyr)
-happiness<- read_csv("https://raw.githubusercontent.com/info201b-au2022/happiness-levels/main/data/2019_happiness.csv")
+library(tidyr)
+happiness<- read.csv("https://raw.githubusercontent.com/info201b-au2022/happiness-levels/main/data/2019_happiness.csv")
 
-fertility<- read_csv("https://raw.githubusercontent.com/info201b-au2022/happiness-levels/main/data/Fertility.csv")
+fertility<- read.csv("https://raw.githubusercontent.com/info201b-au2022/happiness-levels/main/data/Fertility.csv")
 
-median_age<- read_csv("https://raw.githubusercontent.com/info201b-au2022/happiness-levels/main/data/Median%20age.csv")
+median_age<- read.csv("https://raw.githubusercontent.com/info201b-au2022/happiness-levels/main/data/Median%20age.csv")
 
-suicide_rate<- read_csv("https://raw.githubusercontent.com/info201b-au2022/happiness-levels/main/data/Suicide%20rate.csv")
+suicide_rate<- read.csv("https://raw.githubusercontent.com/info201b-au2022/happiness-levels/main/data/Suicide%20rate.csv")
 
-urbanization <- read_csv("https://raw.githubusercontent.com/info201b-au2022/happiness-levels/main/data/Urbanization%20rate.csv")
+urbanization <- read.csv("https://raw.githubusercontent.com/info201b-au2022/happiness-levels/main/data/Urbanization%20rate.csv")
 
-names(happiness)[names(happiness)=="Country or region"] <- "Country"
+names(happiness)[names(happiness)=="Country.or.region"] <- "Country"
 happiness_merged <- happiness %>% 
    left_join(fertility,by = "Country") %>% 
    left_join(median_age, by ='Country') %>% 
@@ -58,7 +59,7 @@ fertility_rate_info$max <- max(fert,na.rm = T)
 fertility_rate_info$min<- min(fert,na.rm = T)
 
 
-median_age_info <- list()
+age_info <- list()
 median <- happiness_merged$`Median age`
 median_age_info$median <- median(fert,na.rm = T)
 median_age_info$max <- max(fert,na.rm = T)
@@ -67,6 +68,7 @@ median_age_info$min <- min(fert,na.rm = T)
 
 urbanization_info <- list()
 urban <- happiness_merged$`Urbanization rate`
-median_age_info$median <- median(urban,na.rm = T)
-median_age_info$max <- max(urban,na.rm = T)
-median_age_info$min <- min(urban,na.rm = T)
+urban_info$median <- median(urban,na.rm = T)
+urban_info$max <- max(urban,na.rm = T)
+urban_info$min <- min(urban,na.rm = T)
+
