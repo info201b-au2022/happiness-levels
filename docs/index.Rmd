@@ -7,19 +7,21 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
 ```
 
 ## Dynamic Paragraph
 
 ## Summary Information
 ```{r summary, echo=FALSE}
-summary(cars)
+source("../source/Summary_info.R")
+get_relevant_summaries()
 ```
 
 ## Aggregate Table
 ```{r agg_table, echo=FALSE, message=FALSE}
 source("../source/aggregate_operations.R")
-display_grouped_averages()
+kable(display_grouped_averages())
 ```
 
 ## Charts
