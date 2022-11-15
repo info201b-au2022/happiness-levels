@@ -19,9 +19,9 @@ all_sums <- get_relevant_summaries()
 To summarize the information gathered from the data, we spread it out into different components that could influence what makes people happy. In our chart #1, we can see that based on region, North America and Western Europe are the places with the highest mean happiness score with a score above `r all_sums$happiness$max` pictured in a lighter green. A perfect example is chart #2 which visualizes the effect of GDP on happiness, arguing the idea of money buying happiness. The hypothesis proved to be correct as seen with the upward sloping trendline. Key values for GDP were: 
 
 
-* Maximum `r all_sums$gdp$max` 
-* Minimum `r all_sums$gdp$min`  
-* Median `r all_sums$gdp$median`
+* Maximum GDP: `r all_sums$gdp$max` 
+* Minimum GDP: `r all_sums$gdp$min`  
+* Median GDP: `r all_sums$gdp$median`
 
 The data on the plot shows that there isn't a single country with a GPA under 1.00 that ranks above 30th. On the other hand, many outliers disregard the importance of a country's wealth as a determinant of their happiness. For example, Kuwait has a GDP of 1.474 and is ranked 45th compared to Brazil which has a GDP of 0.986 and is ranked 28th. Another notable datapoint is the United Arab Emirates, who have the highest GDP in the data but is only ranked 20th. 
 
@@ -29,6 +29,7 @@ Lastly, our 3rd chart shows us the top ten happiest countries and their score. F
 
 
 ## Aggregate Table
+### Means by Year
 ```{r agg_table, echo=FALSE, message=FALSE}
 source("../source/aggregate_operations.R")
 kable(display_grouped_averages())
