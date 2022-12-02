@@ -17,7 +17,7 @@ chart1_sidebar_content <- sidebarPanel(
 )
 
 chart1_main_content <- mainPanel(
-   
+
 )
 
 chart1_panel <- tabPanel(
