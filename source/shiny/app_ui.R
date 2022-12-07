@@ -108,6 +108,7 @@ report_panel <- tabPanel(
 
 
 ui <- fluidPage(
+   theme = shinytheme("cerulean"),
   navbarPage("Happiness Levels Analysis", 
              intro_panel, 
              chart1_panel, 
