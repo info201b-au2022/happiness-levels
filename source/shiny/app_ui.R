@@ -1,4 +1,6 @@
 # intro
+happiness <- read.csv("https://raw.githubusercontent.com/info201b-au2022/happiness-levels/main/data/2019_happiness.csv")
+countries <- as.list(happiness$Country.or.region)
 
 intro_main_content <- mainPanel()
 
@@ -48,14 +50,32 @@ chart2_panel <- tabPanel(
 
 # chart 3
 
-chart3_sidebar_content <- sidebarPanel()
+chart3_sidebar_content <- sidebarPanel(
+  selectInput("country", 
+              "Pick A Country",
+              countries
+              ),
+  selectInput(
+    "yvar",
+    label = "Select a Variable",
+    choices = list(
+      "Happiness Score" = "Score",
+      "Social Support" = "Social.support",
+      "GDP Per Capita" = "GDP.per.capita"
+    ),
+    selected = "Score"
+  )
+)
 
-chart3_main_content <- mainPanel()
+chart3_main_content <- mainPanel(
+  plotlyOutput("histo"),
+  p("Caption: ")
+)
 
 chart3_panel <- tabPanel(
   "Chart 3",
   
-  titlePanel("My Page 3"),
+  titlePanel("Histograms by Country"),
   
   chart3_sidebar_content,
   
@@ -87,11 +107,14 @@ report_panel <- tabPanel(
 )
 
 
-
-
-shinyUI(fluidPage(
-  navbarPage("Happieness Levels", intro_panel, chart1_panel, chart2_panel,
-             chart3_panel, summary_panel, report_panel)
-))
+ui <- fluidPage(
+  navbarPage("Happiness Levels Analysis", 
+             intro_panel, 
+             chart1_panel, 
+             chart2_panel,
+             chart3_panel, 
+             summary_panel, 
+             report_panel)
+)
 
 
