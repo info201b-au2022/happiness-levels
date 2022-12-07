@@ -51,31 +51,31 @@ chart2_panel <- tabPanel(
 # chart 3
 
 chart3_sidebar_content <- sidebarPanel(
-  selectInput("country", 
-              "Pick A Country",
-              countries
-              ),
   selectInput(
     "yvar",
     label = "Select a Variable",
     choices = list(
-      "Happiness Score" = "Score",
-      "Social Support" = "Social.support",
-      "GDP Per Capita" = "GDP.per.capita"
+      "Happiness Score" = "Happiness Score",
+      "Social Support" = "Social Support",
+      "GDP Per Capita" = "GDP Per Capita",
+      "Healthy Life Expectancy" = "Healthy Life Expectancy",
+      "Freedom" = "Freedom",
+      "Generosity" = "Generosity",
+      "Corruption Perception" = "Corruption Perception"
     ),
-    selected = "Score"
+    selected = "Happiness Score"
   )
 )
 
 chart3_main_content <- mainPanel(
-  plotlyOutput("histo"),
+  plotlyOutput("bar"),
   p("Caption: ")
 )
 
 chart3_panel <- tabPanel(
   "Chart 3",
   
-  titlePanel("Histograms by Country"),
+  titlePanel("Bar Plots on Top Five Happiest Countries"),
   
   chart3_sidebar_content,
   

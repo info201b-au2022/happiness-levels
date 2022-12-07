@@ -5,32 +5,37 @@ library(tidyverse)
 library(plotly)
 
 happiness <- read.csv("https://raw.githubusercontent.com/info201b-au2022/happiness-levels/main/data/2019_happiness.csv")
-countries <- as.list(happiness$Country.or.region)
 
-fig <- plot_ly(x = countries, y=happiness$Score, type = "histogram")
-fig
-
-build_scatter <- function(data, selected = "Finland", yvar = "Score") {
-  data <- read.csv("https://raw.githubusercontent.com/info201b-au2022/happiness-levels/main/data/2019_happiness.csv")
-  data <- data %>% 
-    filter(Country.or.region == selected)
-
-  p <- plot_ly(
-    x = data[, "Country.or.region"],
-    y = data[, yvar], 
-    type="histogram", 
-    ) %>% 
-    layout(
-      title = "",
-      xaxis = "", 
-      yaxis = ""
+build_barchart <- function(data, yvar = "Score") {
+  data <- head(data, 5)
+  data <- data %>%
+    rename(
+      "Happiness Score" = "Score",
+      "Social Support" = "Social.support",
+      "GDP Per Capita" = "GDP.per.capita",
+      "Healthy Life Expectancy" = "Healthy.life.expectancy",
+      "Freedom" = "Freedom.to.make.life.choices",
+      "Generosity" = "Generosity",
+      "Corruption Perception" = "Perceptions.of.corruption",
+      "Country" = "Country.or.region"
     )
+  p <- plot_ly(
+    data = data,
+    x = data[, "Country"],
+    y = data[, yvar],
+    type = "bar"
+  ) %>%
+    layout(
+      title="Bar Plot Analysis of 5 Happiest Countries",
+      yaxis=list(title=yvar),
+      xaxis=list(title="Country")
+    )
+    
   return(p)
 }
 
-
 server <- function(input, output) {
-  output$scatter <- renderPlotly({
-    return(build_histo(happiness, country=input$selected, yvar=input$yvar))
+  output$bar <- renderPlotly({
+    return(build_barchart(happiness, yvar=input$yvar))
   })
 }
