@@ -41,10 +41,19 @@ intro_main_content
 
 chart1_sidebar_content <- sidebarPanel(
   
+    selectInput(inputId = "VarX",
+                label = "select X-axis Variable:",
+                choices = list("GDP.per.capita", "Score",
+                               "Generosity", "Social.support")), 
+    selectInput(inputId = "VarY",
+                label = "select Y-axis Variable:",
+                choices = list("GDP.per.capita", "Score",
+                               "Generosity", "Social.support")), 
+  
 )
 
 chart1_main_content <- mainPanel(
-  
+  plotOutput("scatter"),
   p("Caption: The purpose of this scatterplot is to analyze the correlation between different factors. If the dots trend in one direction, the factors may be related. If not, they are likely not correlated. This chart's primary purpose to to analyze how different factors affect happiness, but it can also be used to analyze other correlations, like GDP per capita vs generosity.")
 )
 
