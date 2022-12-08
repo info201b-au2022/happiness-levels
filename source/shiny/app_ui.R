@@ -51,7 +51,7 @@ chart1_main_content <- mainPanel(
 
 chart1_panel <- tabPanel(
   "Chart 1",
-  titlePanel("My Page 1"),
+  titlePanel("Scatterplot Correlation Analysis of All Happiness Factors"),
   chart1_sidebar_content,
   chart1_main_content
 )
@@ -78,7 +78,7 @@ chart2_main_content <- mainPanel(
 
 chart2_panel <- tabPanel(
   "Chart 2",
-  titlePanel("My Page 2"),
+  titlePanel("Geographic Analysis of Happiness Factors "),
   chart2_sidebar_content,
   chart2_main_content
 )
@@ -126,11 +126,31 @@ summary_panel <- tabPanel(
 
 # report
 
-report_main_content <- mainPanel()
+report_main_content <- mainPanel(
+  h1("What Does it Mean to Be Happy?"),
+  h3("Code Name"),
+  p("happiness-levels"),
+  h3("Authors"),
+  p("Kunal Srivastava (kunalsr@uw.edu)
+    Drew Blik (drewblik@uw.edu)
+    Diego Felgueres (diegof20@uw.edu)
+    Samiira Yusuf  (sy12345@uw.edu)"),
+  h3("Affiliation"),
+  p("INFO-201: Technical Foundations of Informatics - The Information School - University of Washington
+"),
+  p("December 8th, 2022"),
+  h3("Abstract"),
+  p("Our main goal is to assess levels of happiness across the globe as they relate/overlap with relevant metrics like GDP, fertility and life expectancy. To address these questions, we plan to analyze the 2019 World Happiness Report for relationships between several variables to create data visualizations and representations and help explain happiness across the globe.
+"),
+  h3("Keywords"),
+  P("Mental health, happiness, mood")
+  
+  
+)
 
 report_panel <- tabPanel(
   "Report",
-  titlePanel("My report"),
+  titlePanel("Report"),
   summary_main_content
 )
 
