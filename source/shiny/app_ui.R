@@ -56,9 +56,22 @@ chart1_panel <- tabPanel(
 
 # chart 2
 
-chart2_sidebar_content <- sidebarPanel()
+chart2_sidebar_content <- sidebarPanel(
+  selectInput(
+    inputId = "analysis_var",
+    label = "Level of Analysis",
+    choices = list(
+      "Social Support" = "Social.support",
+      "GDP Per Capita" = "GDP.per.capita",
+      "Healthy Life Expectancy" = "Healthy.life.expectancy",
+      "Generosity" = "Generosity"
+    )
+  )
+)
 
-chart2_main_content <- mainPanel()
+chart2_main_content <- mainPanel(
+    plotOutput(outputId = "map")
+)
 
 chart2_panel <- tabPanel(
   "Chart 2",
