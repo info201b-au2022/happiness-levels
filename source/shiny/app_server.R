@@ -37,16 +37,36 @@ build_barchart <- function(data, yvar = "Score") {
 }
 
 
-
-
-
-
-
-
-
-
-
-
+buildmap <- function(happiness, analysis_var = "Generosity"){
+  world_shape = map_data("world")
+  
+  happiness[19, "Country.or.region"] <- "USA"
+  happiness[15, "Country.or.region"] <- "UK"
+  happiness[156, "Country.or.region"] <- "Sudan"
+  happiness[127, "Country.or.region"] <- "Democratic Republic of the Congo"
+  
+  world_happiness <- world_shape %>% 
+    rename(Country.or.region = region) %>% 
+    left_join(happiness, by = "Country.or.region")
+  
+  p <- ggplot(world_happiness) +
+      geom_polygon(
+        mapping = aes(x = long, y = lat, group = group, fill = world_happiness[[analysis_var]]),
+        color = "white",
+        size = .1
+      ) +
+      coord_map() +
+      scale_fill_continuous(low = "#ff0008", high = "#33ff00")+
+      labs(fill = analysis_var,
+           x = "Latitude",
+           y = "Longitude",
+           title = paste("Map of World", analysis_var)
+      )
+  
+  
+  return(p)
+  
+}
 
 
 
@@ -55,5 +75,8 @@ build_barchart <- function(data, yvar = "Score") {
 server <- function(input, output) {
   output$bar <- renderPlotly({
     return(build_barchart(happiness, yvar=input$yvar))
+  })
+  output$map <- renderPlot({
+    return(buildmap(happiness, analysis_var=input$analysis_var))
   })
 }
