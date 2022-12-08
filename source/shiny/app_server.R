@@ -68,9 +68,46 @@ buildmap <- function(happiness, analysis_var = "Generosity"){
 }
 
 buildscatter <- function(happiness, VarX = "Score", VarY = "GDP.per.capita"){
-    data <- happiness[ ,c(VarX,VarY)]
-    p <- plot(data[,1],data[,2]) 
-    return(p)
+    
+  
+  data <- happiness %>%
+    rename(
+      "Happiness Score" = "Score",
+      "Social Support" = "Social.support",
+      "GDP Per Capita" = "GDP.per.capita",
+      "Healthy Life Expectancy" = "Healthy.life.expectancy",
+      "Freedom" = "Freedom.to.make.life.choices",
+      "Generosity" = "Generosity",
+      "Corruption Perception" = "Perceptions.of.corruption",
+      "Country" = "Country.or.region"
+    )
+  temp_x <- data[, VarX]
+  temp_y <- data[, VarY]
+  
+  p <- plot_ly(
+    data = data,
+    x = temp_x,
+    y = temp_y,
+    # color = temp_y,  
+    type   = 'scatter', 
+    mode   = 'markers',
+    fill = ~'',
+    marker = list(sizemode = 'diameter')
+  ) %>%
+    layout(
+      title="Scatter",
+      yaxis=list(title=VarY),
+      xaxis=list(title=VarX)
+    )
+  
+  return(p)
+  
+  
+  
+  
+  #data <- happiness[ ,c(VarX,VarY)]
+    #p <- plot(data[,1],data[,2]) 
+    #return(p)
 }
 
 server <- function(input, output) {
@@ -81,7 +118,7 @@ server <- function(input, output) {
     return(buildmap(happiness, analysis_var=input$analysis_var))
   })
   
-  output$scatter <- renderPlot({
+  output$scatter <- renderPlotly({
     return(buildscatter(happiness, VarX = input$VarX, input$VarY))
   })
 }

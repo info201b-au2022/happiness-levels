@@ -18,12 +18,63 @@ intro_main_content <- mainPanel(
   we're looking for a correlation between the data's variables and the 
   happiness index. By analyzing patterns, outliers, and elements like geography,
   we seek to better comprehend and illustrate what makes us happy."),
-  h1("Our Dataset"),
+  
+  
+  h2("Problem Domain"),
+  h3("Project Framing"),
+  p("This project is operating within the many boundaries of human experience. Happiness is a concept that many philosophers spend their lives trying to define, but happiness is difficult to quantify. This project takes into account factors such as health, economic conditions, and freedom to determine which factors correlate most with happiness. This is a project that can apply to any human because we all seek to achieve happiness in one form or another. This project is also limited in terms of individual experience. For example, a country's GDP per capita could be quite high, but this number could be misrepresentative due to the unequal allocations of wealth in certain countries, like the United States.
+"),
+  h3("Human values"),
+  p("The human value that is at the forefront of this project is happiness. But the factors that we will investigate in relation to happiness can be defined through human values as well. Health can be defined as the value of self-discipline because one must be disciplined enough to take care of their own body. Health can also be linked to love and compassion because if you are unable to take care of yourself for whatever reason, those who love you will show compassion in helping you stay healthy. The World Health Organization indicates that all of these values play an integral role in health. Economic prosperity is difficult to assign a value because many factors contribute to it. On an individual level, it can be linked to your perseverance, concentration, and creativity. On a communal level, economic prosperity and freedom can be linked to global stewardship and cooperation. A study in the Chinese journal of Sociology found that a country's political relationships can have a significant impact on wealth. Attached is a figure laying out these human values, classifying them under different terms.
+"),
+  h3("Direct and Indirect Stakeholders"),
+  p("The direct stakeholders in this project include us as the data analysts, the INFO 201 class as viewers of this project, and Professor Hendry. The indirect stakeholders include those who will not use this project, but might be affected by it. For example, if a policy maker were to make a legislative decision based on this project to make their community more happy, those impacted by that legislation would be indirect stakeholders.
+"),
+  h3("Possbile Harms"),
+  p("Possible harms of this project include misinterpretation of the data. Hypothetically, if the data determined that the happiness countries are all in the Middle East, one might interpret that to mean that the cultures of the Middle East are better at inducing happiness than others. This might lead them to make decisions to replicate Middle Eastern countries cultures, even if the culture isn't necessarily related to the happiness of the countries.
+"),
+  h3("Possible Benefits"),
+  p("The possible benefits of this project is to serve as a general guide on what factors are most conducive to happiness! By learning what factors contribute most to happiness, we could learn how to orient our lives to pursue the highest happiness. For example, if it turns out that health is a larger determinant of happiness than wealth, some might decide to spend more time exercising and less time at work.
+"),
+  
+  h2("Research Questions"),
+  h3("What are the top 5 happiest countries?"),
+  p("We want to find the happiest countries to find important factors that are tied with countries with a high happiness index. This is important because if we see that most of the countries have strong culture (for example), that could be a potential factor to explore later. 
+"),
+  h3("What is the relationship between health and happiness?"),
+  p("We want to find a relationship between health and happiness to help explain a country's happiness score. If we can see that countries with large access to health care tend to be happier, areas with low happiness scores could be depleted of health resources, money, etc, which isn't right. 
+"),
+  h3("What is the relationship between a national economy and national happiness score?"),
+  p("We want to find the relationship between national economic success and happiness. This is an interesting question because the value of money vs. happiness is constantly debated. We are interested in seeing if there is any type of relationship between these two variables."),
+  h3("What is the relationship between freedom and happiness?"),
+  p("While we expect this relationship to be pretty positive, this is a good question to confirm the validity of our dataset, and therefore our other research questions. Confirming a relationship between these two variables will help give us concrete observations."),
+  h2("Our Dataset"),
   p("In this project, we have included seven variables. To gain a better 
   understanding of what determines and affects happiness, we chose freedom, 
   health, suicide rates, urbanization, fertility rates, GDP, and age. We 
   included three interactive charts in this project to teach our users about 
-  how the variables we chose affect happiness globally.")
+  how the variables we chose affect happiness globally."),
+  h2("Key Findings"),
+  p("The five happiest countries turned out to be Denmark, Finland, Iceland, Netherlands, and Norway. 
+  All of these countries, except the Netherlands, are considered Nordic countries, with some shared cultural characteristics. 
+  These countries had similar levels of social support, GDP per capita, healthy life expectancy, and freedom. 
+  However, the countries' scores of generosity and corruption perception varied greatly! 
+  Looking at generosity differences, Finland scored the lowest at 0.15, while the next lowest score was Denmark at 0.25 and the highest score was Iceland at 0.35. 
+  This indicates that generosity among the happiest countries does not affect happiness as much as the other factors. 
+  Interestingly, while Iceland scored the highest in generosity among the five happiest countries, it scored the lowest in corruption perception. 
+  However, the rest of the five happiest countries had very high corruption perception scores. 
+  This implies that less corruption generally leads to more happiness, especially in the five happiest countries.
+"),
+  p("There was a strong correlation between healthy life expectancy and happiness. The trend showed that as healthy life expectancy increased, so did happiness. The country with the highest life expectancy, Singapore, did not have the highest happiness score, but the country ranked within the top 40 in happiness. The happiest country, Finland, did not have the highest life expectancy but ranked within the top 25 for life expectancy. This trend makes sense, considering healthy people tend to be happier, and being sick and living less tends to make people sad.
+"),
+  p("There was a strong correlation between happiness and GDP per capita. 
+  The trend showed that as GDP per capita increased, so did happiness. 
+  The country with the highest GDP per capita, Qatar, did not have the highest happiness score, but the country ranked within the top 30 in happiness. 
+  The happiest country, Finland, did not have the highest GDP per capita but ranked within the top 25 for GDP per capita. 
+  This trend shows that the saying 'Money can't buy happiness' is not necessarily true, as richer countries are happier overall.
+"),
+  p("There was a small correlation between happiness and freedom. The trend showed that as freedom increased, so did happiness, but not by as much as factors like GDP or life expectancy. The country with the highest level of freedom, Uzbekistan, did not have the highest happiness score but ranked within the top 40 in happiness. The happiest country, Finland, did not have the highest freedom score but was actually the fifth most free! While this trend was weaker than the others mentioned in previous research questions, freedom still had a positive impact on happiness.
+")
 )
 
 intro_panel <- tabPanel(
@@ -33,19 +84,45 @@ intro_panel <- tabPanel(
 )
 # chart 1
 
+
+list(
+  "Happiness Score",
+  "Social Support",
+  "GDP Per Capita",
+  "Healthy Life Expectancy",
+  "Freedom",
+  "Generosity",
+  "Corruption Perception"
+)
+
 chart1_sidebar_content <- sidebarPanel(
     selectInput(inputId = "VarX",
                 label = "select X-axis Variable:",
-                choices = list("GDP.per.capita", "Score",
-                               "Generosity", "Social.support")), 
+                choices = list(
+                  "Happiness Score",
+                  "Social Support",
+                  "GDP Per Capita",
+                  "Healthy Life Expectancy",
+                  "Freedom",
+                  "Generosity",
+                  "Corruption Perception")
+                ),
+                
     selectInput(inputId = "VarY",
                 label = "select Y-axis Variable:",
-                choices = list("GDP.per.capita", "Score",
-                               "Generosity", "Social.support")), 
+                choices = list(
+                  "Happiness Score",
+                  "Social Support",
+                  "GDP Per Capita",
+                  "Healthy Life Expectancy",
+                  "Freedom",
+                  "Generosity",
+                  "Corruption Perception")
+    )
 )
 
 chart1_main_content <- mainPanel(
-  plotOutput("scatter"),
+  plotlyOutput("scatter"),
   p("Caption: The purpose of this scatterplot is to analyze the correlation between different factors. If the dots trend in one direction, the factors may be related. If not, they are likely not correlated. This chart's primary purpose to to analyze how different factors affect happiness, but it can also be used to analyze other correlations, like GDP per capita vs generosity.")
 )
 
@@ -143,15 +220,13 @@ report_main_content <- mainPanel(
   p("Our main goal is to assess levels of happiness across the globe as they relate/overlap with relevant metrics like GDP, fertility and life expectancy. To address these questions, we plan to analyze the 2019 World Happiness Report for relationships between several variables to create data visualizations and representations and help explain happiness across the globe.
 "),
   h3("Keywords"),
-  P("Mental health, happiness, mood")
-  
-  
+  p("Mental health, happiness, mood")
 )
 
 report_panel <- tabPanel(
   "Report",
   titlePanel("Report"),
-  summary_main_content
+  report_main_content
 )
 
 
