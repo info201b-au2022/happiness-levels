@@ -84,17 +84,6 @@ intro_panel <- tabPanel(
 )
 # chart 1
 
-
-list(
-  "Happiness Score",
-  "Social Support",
-  "GDP Per Capita",
-  "Healthy Life Expectancy",
-  "Freedom",
-  "Generosity",
-  "Corruption Perception"
-)
-
 chart1_sidebar_content <- sidebarPanel(
     selectInput(inputId = "VarX",
                 label = "select X-axis Variable:",
@@ -193,7 +182,20 @@ chart3_panel <- tabPanel(
 
 # summary
 
-summary_main_content <- mainPanel()
+summary_main_content <- mainPanel(
+  h3("Key Takeaway 1"),
+  p("Generosity and corruption perception were the least correlated with happiness.
+This indicates that you can be in a country that is incredibly corrupt but still be happy on an individual level.
+Alternatively, you can be in a country that is very generous overall but still be very sad."),
+  h3("Key Takeaway 2"),
+  p("The 5 happiest countries all had very high levels of social support, freedom and GDP. 
+This indicates that all of these factors are incredibly important to a happy country.
+Money and social support helps fulfil your basic needs, and freedom allows one to live their life freely, which makes them pretty happy!"),
+  h3("Key Takeaway 3"),
+  p("The unhappiest countries tended to fall in Africa. 
+This is likely due to the lack of GDP per capita, social support, and healthcare infrastructure in many of the African countries.")
+  
+)
 
 summary_panel <- tabPanel(
   "Summary",
@@ -265,7 +267,12 @@ report_main_content <- mainPanel(
   This trend shows that the saying 'Money can't buy happiness' is not necessarily true, as richer countries are happier overall."),
   p("There was a small correlation between happiness and freedom. The trend showed that as freedom increased, so did happiness, but not by as much as factors like GDP or life expectancy. The country with the highest level of freedom, Uzbekistan, did not have the highest happiness score but ranked within the top 40 in happiness. The happiest country, Finland, did not have the highest freedom score but was actually the fifth most free! While this trend was weaker than the others mentioned in previous research questions, freedom still had a positive impact on happiness."),
   h3("Discussion"),
-  p("This project aims to investigate the factors that influence happiness in human beings. By studying various aspects of human behavior, we aim to determine which factors are most closely related to happiness. Through our analysis of the data, we have discovered a couple of key factors that have a significant impact on happiness levels across countries. One of the most significant factors we identified is GDP. Although it is commonly said that money can't buy happiness, our data showed that living in a country with a higher GDP can have a positive impact on happiness levels. This is likely because having more resources, goods, and services available can make life more enjoyable and alleviate some of the stressors that people face. However, we also found that other factors, such as levels of corruption and freedom, had a significantly less impact on the trends of happiness we observed in different countries. This suggests that while these factors may play a role in happiness, they are not as significant as some other factors. Overall, our data showed that all of the variables we studied are strongly correlated with happiness, as well as with each other. This information can be used to inform policies and improve living conditions in order to promote mental well-being for citizens around the world."),
+  p("This project operates within the many boundaries of human experience. We investigate factors to determine which ones are most closely related to happiness. Human behavior has been studied by researchers and philosophers in order to better understand what factors in life influence happiness. As we investigate the various factors that influence happiness, our work allows our users and audience to gain a better understanding of what it takes to improve happiness in various countries around the world.
+
+    We discovered a couple of important factors that have a significant impact on happiness levels across countries by analyzing our dataset. Although we all know that 'money can't buy happiness,' factors like GDP have a significant impact on happiness. Living in a country with a higher GDP can help to alleviate some of the world's life stressors. For example, more resources, goods, and services available to us can make life a little more enjoyable. But we also learned how some factors such as levels of corruption, and freedom had a significantly less impact on the trends of happiness we saw amongst different countries. 
+    In hopes to understand how important factors impact our mood, it is also important to understand why this information is even important. Mental health is an important topic that affects individuals at different levels. Understanding the levels to which different lively factors can affect our mental health will allow for better implementation of policies and ways to better support the needs of individuals on a larger scale. For example, countries can determine how to better improve the rate of life expectancy versus freedom because we learned that life expectancy has a higher correlation with happiness around the world.
+    
+    To summarize, we recognize that not all of our variables are strongly correlated with happiness or with one another. We can glean important information from this data, such as how to improve policies and living conditions to impact work that supports improving the mental well-being of citizens worldwide."),
   h3("Conclusion"),
   p("Through the course of the analysis, we experimented with trying to discover relationships between countries and their happiness metrics. For example, we found it very interesting that the top five happiest countries all share very similar levels of social support, GDP per capita, life expectancy, and freedom. However, they had largely differing differences when compared by generosity or corruption perception. Our geospatial visualization allowed us to visualize hotspots of high ratings on a map of the world, which gave us the ability to visualize high-intensity areas in stronger colors, like a heatmap. Finally the scatterplot gave the reader an insight into the correlations and relationships between variables. We found this visualization the most revealing because of the nature of the correlations between two variables—most had positive, very direct relationships as they related to happiness. However, in our analysis, it was important for us to remember that correlation and causation are not the same. That is, even if there is a positive, direct, relationship between happiness and GDP per capita, happiness cannot be explained by the GDP per capita, as there are many unknown factors into the overall happiness score. We would need to run experimentation to try to isolate variables in the future, and experiment on them to look for an increase in happiness. Looking back, we think we could have done a better job cleaning the data in the preprocessing stage. When creating the interactive plots for each chart, we had to clean it for each case, rather than preprocess the data to a new spreadsheet file and use that instead. In conclusion, we did a solid analysis of the World Happiness Data, diving deeper than surface level into the data to look for hidden relationships."),
   h3("References"),
