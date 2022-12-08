@@ -61,15 +61,10 @@ buildmap <- function(happiness, analysis_var = "Generosity"){
            y = "Longitude",
            title = paste("Map of World", analysis_var)
       )
-  
-  
   return(p)
-  
 }
 
 buildscatter <- function(happiness, VarX = "Score", VarY = "GDP.per.capita"){
-    
-  
   data <- happiness %>%
     rename(
       "Happiness Score" = "Score",
@@ -88,7 +83,6 @@ buildscatter <- function(happiness, VarX = "Score", VarY = "GDP.per.capita"){
     data = data,
     x = temp_x,
     y = temp_y,
-    # color = temp_y,  
     type   = 'scatter', 
     mode   = 'markers',
     fill = ~'',
@@ -99,15 +93,7 @@ buildscatter <- function(happiness, VarX = "Score", VarY = "GDP.per.capita"){
       yaxis=list(title=VarY),
       xaxis=list(title=VarX)
     )
-  
   return(p)
-  
-  
-  
-  
-  #data <- happiness[ ,c(VarX,VarY)]
-    #p <- plot(data[,1],data[,2]) 
-    #return(p)
 }
 
 server <- function(input, output) {
