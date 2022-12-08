@@ -3,6 +3,8 @@ library(ggplot2)
 library(dplyr)
 library(tidyverse)
 library(plotly)
+library(maps)
+world_shape = map_data("world")
 
 happiness <- read.csv("https://raw.githubusercontent.com/info201b-au2022/happiness-levels/main/data/2019_happiness.csv")
 
@@ -33,6 +35,22 @@ build_barchart <- function(data, yvar = "Score") {
     
   return(p)
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 server <- function(input, output) {
   output$bar <- renderPlotly({
