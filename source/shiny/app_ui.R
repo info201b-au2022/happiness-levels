@@ -1,3 +1,6 @@
+library(plotly)
+library(shiny)
+
 # intro
 happiness <- read.csv("https://raw.githubusercontent.com/info201b-au2022/happiness-levels/main/data/2019_happiness.csv")
 countries <- as.list(happiness$Country.or.region)
@@ -75,11 +78,8 @@ chart2_main_content <- mainPanel(
 
 chart2_panel <- tabPanel(
   "Chart 2",
-  
   titlePanel("My Page 2"),
-  
   chart2_sidebar_content,
-  
   chart2_main_content
 )
 
@@ -143,7 +143,6 @@ report_panel <- tabPanel(
 
 
 ui <- fluidPage(
-   theme = shinytheme("cerulean"),
   navbarPage("Happiness Levels Analysis", 
              intro_panel, 
              chart1_panel, 
