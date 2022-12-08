@@ -45,6 +45,7 @@ chart1_sidebar_content <- sidebarPanel(
 
 chart1_main_content <- mainPanel(
   
+  p("Caption: The purpose of this scatterplot is to analyze the correlation between different factors. If the dots trend in one direction, the factors may be related. If not, they are likely not correlated. This chart's primary purpose to to analyze how different factors affect happiness, but it can also be used to analyze other correlations, like GDP per capita vs generosity.")
 )
 
 chart1_panel <- tabPanel(
@@ -73,7 +74,8 @@ chart2_sidebar_content <- sidebarPanel(
 )
 
 chart2_main_content <- mainPanel(
-    plotOutput(outputId = "map")
+    plotOutput(outputId = "map"),
+    p("Caption: ")
 )
 
 chart2_panel <- tabPanel(
