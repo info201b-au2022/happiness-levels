@@ -7,7 +7,6 @@ countries <- as.list(happiness$Country.or.region)
 
 intro_main_content <- mainPanel(
   h1("Introduction"),
-  
   p(" Individual moods and conduct are significantly impacted by happiness. 
   Even more crucial is knowing what influences our happiness. We looked 
   at this issue from a wider perspective in an effort to comprehend this 
@@ -19,9 +18,7 @@ intro_main_content <- mainPanel(
   we're looking for a correlation between the data's variables and the 
   happiness index. By analyzing patterns, outliers, and elements like geography,
   we seek to better comprehend and illustrate what makes us happy."),
-  
   h1("Our Dataset"),
-  
   p("In this project, we have included seven variables. To gain a better 
   understanding of what determines and affects happiness, we chose freedom, 
   health, suicide rates, urbanization, fertility rates, GDP, and age. We 
@@ -30,17 +27,13 @@ intro_main_content <- mainPanel(
 )
 
 intro_panel <- tabPanel(
-   "Home",
-   
-titlePanel("Home"),
-  
-intro_main_content
-
+  "Home",
+  titlePanel("Home"),
+  intro_main_content
 )
 # chart 1
 
 chart1_sidebar_content <- sidebarPanel(
-  
     selectInput(inputId = "VarX",
                 label = "select X-axis Variable:",
                 choices = list("GDP.per.capita", "Score",
@@ -49,7 +42,6 @@ chart1_sidebar_content <- sidebarPanel(
                 label = "select Y-axis Variable:",
                 choices = list("GDP.per.capita", "Score",
                                "Generosity", "Social.support")), 
-  
 )
 
 chart1_main_content <- mainPanel(
@@ -59,11 +51,8 @@ chart1_main_content <- mainPanel(
 
 chart1_panel <- tabPanel(
   "Chart 1",
-  
   titlePanel("My Page 1"),
-  
   chart1_sidebar_content,
-  
   chart1_main_content
 )
 
@@ -120,11 +109,8 @@ chart3_main_content <- mainPanel(
 
 chart3_panel <- tabPanel(
   "Chart 3",
-  
   titlePanel("Bar Plots on Top Five Happiest Countries"),
-  
   chart3_sidebar_content,
-  
   chart3_main_content
 )
 
@@ -134,9 +120,7 @@ summary_main_content <- mainPanel()
 
 summary_panel <- tabPanel(
   "Summary",
-  
   titlePanel("My summary takeaways"),
-  
   summary_main_content
 )
 
@@ -146,9 +130,7 @@ report_main_content <- mainPanel()
 
 report_panel <- tabPanel(
   "Report",
-  
   titlePanel("My report"),
-  
   summary_main_content
 )
 

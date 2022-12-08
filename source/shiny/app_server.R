@@ -36,7 +36,6 @@ build_barchart <- function(data, yvar = "Score") {
   return(p)
 }
 
-
 buildmap <- function(happiness, analysis_var = "Generosity"){
   world_shape = map_data("world")
   
@@ -68,24 +67,11 @@ buildmap <- function(happiness, analysis_var = "Generosity"){
   
 }
 
-
-
 buildscatter <- function(happiness, VarX = "Score", VarY = "GDP.per.capita"){
-
-  
- # p <- plot_ly(data = happiness, x = ~VarX, y = ~VarY)
-  
-  
-  #p <- ggplot(happiness, aes(x=VarX, y=VarY)) + 
-   # geom_point()
-    
     data <- happiness[ ,c(VarX,VarY)]
     p <- plot(data[,1],data[,2]) 
     return(p)
-
 }
-
-
 
 server <- function(input, output) {
   output$bar <- renderPlotly({
