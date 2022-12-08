@@ -75,7 +75,7 @@ chart2_sidebar_content <- sidebarPanel(
 
 chart2_main_content <- mainPanel(
     plotOutput(outputId = "map"),
-    p("Caption: ")
+    p("Caption: This purpose of this map chart is to see where countries differ in terms of different variables that affect happiness. This map allows us to see where certain variables are most or less prevelant, if trends are similar or differ wildly from country to neighboring country.")
 )
 
 chart2_panel <- tabPanel(
@@ -106,7 +106,7 @@ chart3_sidebar_content <- sidebarPanel(
 
 chart3_main_content <- mainPanel(
   plotlyOutput("bar"),
-  p("Caption: ")
+  p("Caption: The purpose of this bar chart is to analyze how different features of the dataset are prevelant in the 5 happiest countries. This chart allows us to see what factors are common among the happiest countries.")
 )
 
 chart3_panel <- tabPanel(
